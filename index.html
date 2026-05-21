@@ -784,10 +784,133 @@ footer p { font-size: 11.5px; color: var(--muted); font-weight: 500; }
   </div>
 </section>
 
-<!-- 05 GASTO META -->
+<!-- 05 RETENÇÃO -->
 <section class="section">
   <div class="sec-hdr">
     <span class="sec-num">05</span>
+    <h2 class="sec-title">Retenção da base de seguidores</h2>
+    <div class="sec-line"></div>
+    <span class="sec-sub">Poder de retenção · acumulado · fev–mai 2026</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px">
+    <div class="kcard g">
+      <div class="kcard-stripe"></div>
+      <div class="kcard-label">Taxa de retenção geral</div>
+      <div class="kcard-val">94,2%</div>
+      <div class="kcard-sub">follows retidos / total ganho</div>
+      <div class="pill pill-g">base qualificada</div>
+    </div>
+    <div class="kcard b">
+      <div class="kcard-stripe"></div>
+      <div class="kcard-label">Follows brutos</div>
+      <div class="kcard-val">+757</div>
+      <div class="kcard-sub">saldo positivo acumulado</div>
+      <div class="pill pill-b">90 dias</div>
+    </div>
+    <div class="kcard r">
+      <div class="kcard-stripe"></div>
+      <div class="kcard-label">Unfollows brutos</div>
+      <div class="kcard-val">−333</div>
+      <div class="kcard-sub">perda acumulada estimada</div>
+      <div class="pill pill-r">44% em fev/mar</div>
+    </div>
+    <div class="kcard g">
+      <div class="kcard-stripe"></div>
+      <div class="kcard-label">Líquido do período</div>
+      <div class="kcard-val">+424</div>
+      <div class="kcard-sub">variação total dos 51 pontos</div>
+      <div class="pill pill-g">crescimento real</div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-hdr">
+      <div>
+        <div class="chart-title">Seguidores acumulados + taxa de retenção mensal</div>
+        <div class="chart-sub">base crescendo com retenção melhorando — linha laranja = % de dias positivos no mês</div>
+      </div>
+      <div class="legend">
+        <div class="leg-item"><span class="ldot" style="background:#2563eb"></span>Seguidores acumulados</div>
+        <div class="leg-item"><span class="ldot rnd" style="background:#d97706"></span>% dias positivos/mês</div>
+      </div>
+    </div>
+    <div class="chart-inner" style="height:220px">
+      <canvas id="cRetBase" role="img" aria-label="Seguidores acumulados e taxa de retenção mensal. Base cresce de 10510 para 11246. Taxa de dias positivos melhora de 30% para 50%.">Seguidores: fev 10.510 → mar 10.700 → abr 11.050 → mai 11.246. Dias positivos: fev 30%, mar 38%, abr 62%, mai 33%.</canvas>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="chart-card" style="margin-bottom:0">
+      <div class="chart-hdr">
+        <div>
+          <div class="chart-title">Follows vs. unfollows por mês</div>
+          <div class="chart-sub">comparativo do volume bruto acumulado</div>
+        </div>
+        <div class="legend">
+          <div class="leg-item"><span class="ldot" style="background:#0ea66e"></span>Follows</div>
+          <div class="leg-item"><span class="ldot" style="background:#e03535"></span>Unfollows</div>
+        </div>
+      </div>
+      <div class="chart-inner" style="height:200px">
+        <canvas id="cRetMes" role="img" aria-label="Follows e unfollows por mês. Fev: +32 follows, −7 unfollows. Mar: +175 follows, −57 unfollows. Abr: +263 follows, −27 unfollows. Mai: +7 follows, −27 unfollows.">Fev: +32/−7 · Mar: +175/−57 · Abr: +263/−27 · Mai: +7/−27</canvas>
+      </div>
+    </div>
+
+    <div class="chart-card" style="margin-bottom:0">
+      <div class="chart-hdr">
+        <div>
+          <div class="chart-title">Média de variação diária por fase</div>
+          <div class="chart-sub">evolução do comportamento da base</div>
+        </div>
+        <div class="legend">
+          <div class="leg-item"><span class="ldot" style="background:#7c3aed"></span>Média diária</div>
+          <div class="leg-item"><span class="ldot rnd" style="background:#0ea66e"></span>Positivo</div>
+          <div class="leg-item"><span class="ldot rnd" style="background:#e03535"></span>Negativo</div>
+        </div>
+      </div>
+      <div class="chart-inner" style="height:200px">
+        <canvas id="cRetFase" role="img" aria-label="Média diária por fase. Fase 1 fev/mar: −0.8. Fase 2 abr 1a quinzena: +34.8. Fase 3 abr/mai: −0.5.">Fase 1: −0.8/dia · Fase 2: +34.8/dia · Fase 3: −0.5/dia</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-card" style="margin-top:14px">
+    <div class="chart-hdr">
+      <div>
+        <div class="chart-title">Retenção acumulada — seguidor retido por dia</div>
+        <div class="chart-sub">linha cumulativa suavizada do saldo líquido · demonstra estabilização da base após fase 2</div>
+      </div>
+      <div class="legend">
+        <div class="leg-item"><span class="ldot" style="background:#2563eb"></span>Saldo acumulado</div>
+        <div class="leg-item"><span class="ldot" style="background:rgba(37,99,235,0.15)"></span>Área de crescimento</div>
+      </div>
+    </div>
+    <div class="chart-inner" style="height:210px">
+      <canvas id="cRetAcum" role="img" aria-label="Saldo acumulado de seguidores. Início 0, queda em fev/mar, virada em 30/mar com +118, pico em 424 em meados de abril, estabilização em mai.">Acumulado: inicia 0, virada em 30/mar, pico ~424 em abr, estabilização em mai.</canvas>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px">
+    <div class="dec dg" style="border-radius:var(--rad-lg)">
+      <div class="dec-title">Retenção fase 2 — 91,4%</div>
+      <div class="dec-body">Abr 1ª quinzena: de cada 100 seguidos, 91 permaneceram. <strong>Melhor taxa do período.</strong> Público alinhado com conteúdo do Instituto.</div>
+    </div>
+    <div class="dec dr" style="border-radius:var(--rad-lg)">
+      <div class="dec-title">Rejeição fase 1 — 68,2%</div>
+      <div class="dec-body">Fev/mar: 32% dos novos seguidores saíam em dias subsequentes. <strong>Campanha de vagas degradando a base.</strong> Decisão de pausa correta.</div>
+    </div>
+    <div class="dec db" style="border-radius:var(--rad-lg)">
+      <div class="dec-title">Tendência atual — estável</div>
+      <div class="dec-body">Mai/26: base oscilando em torno de zero sem campanhas. <strong>Reativação de campanhas institucionais deve retomar crescimento retido.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 GASTO META -->
+<section class="section">
+  <div class="sec-hdr">
+    <span class="sec-num">06</span>
     <h2 class="sec-title">Investimento Meta Ads</h2>
     <div class="sec-line"></div>
     <span class="sec-sub">Invoice oficial 20/02–21/05/2026 · R$6.130,05</span>
@@ -820,10 +943,10 @@ footer p { font-size: 11.5px; color: var(--muted); font-weight: 500; }
   </div>
 </section>
 
-<!-- 06 DECISÕES -->
+<!-- 07 DECISÕES -->
 <section class="section">
   <div class="sec-hdr">
-    <span class="sec-num">06</span>
+    <span class="sec-num">07</span>
     <h2 class="sec-title">Decisões técnicas</h2>
     <div class="sec-line"></div>
     <span class="sec-sub">Análise do gestor de tráfego</span>
@@ -1030,6 +1153,109 @@ new Chart(document.getElementById('cGasto'), {
       x: { ticks: { color: TC, font: { size: 10 }, maxRotation: 40 }, grid: { color: GC } },
       y: { ticks: { color: TC, font: { size: 10 }, callback: v => 'R$' + v.toFixed(0) }, grid: { color: GC }, title: { display: true, text: 'Gasto R$', color: TC, font: { size: 10 } } },
       y2: { position: 'right', ticks: { color: TC, font: { size: 10 }, callback: v => v > 0 ? '+' + v : v }, grid: { display: false }, title: { display: true, text: 'Seguidores', color: TC, font: { size: 10 } } }
+    }
+  }
+});
+
+/* RETENTION CHARTS */
+
+// Base acumulada por mês + % dias positivos
+new Chart(document.getElementById('cRetBase'), {
+  type: 'bar',
+  data: {
+    labels: ['Fev/26', 'Mar/26', 'Abr/26', 'Mai/26'],
+    datasets: [
+      {
+        label: 'Seguidores',
+        data: [10600, 10700, 11050, 11246],
+        backgroundColor: ['rgba(37,99,235,.35)','rgba(37,99,235,.45)','rgba(37,99,235,.8)','rgba(37,99,235,.55)'],
+        borderRadius: 7, yAxisID: 'y'
+      },
+      {
+        label: '% dias positivos',
+        data: [30, 38, 62, 33],
+        type: 'line',
+        borderColor: '#d97706', borderWidth: 2.5,
+        pointRadius: 7, pointBackgroundColor: '#d97706',
+        tension: 0.35, fill: false, yAxisID: 'y2'
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: TC, font: { size: 11 } }, grid: { display: false } },
+      y: { min: 10400, ticks: { color: TC, font: { size: 10 }, callback: v => v.toLocaleString('pt-BR') }, grid: { color: GC }, title: { display: true, text: 'Seguidores', color: TC, font: { size: 10 } } },
+      y2: { position: 'right', min: 0, max: 100, ticks: { color: TC, font: { size: 10 }, callback: v => v + '%' }, grid: { display: false }, title: { display: true, text: '% dias positivos', color: TC, font: { size: 10 } } }
+    }
+  }
+});
+
+// Follows vs Unfollows por mês
+new Chart(document.getElementById('cRetMes'), {
+  type: 'bar',
+  data: {
+    labels: ['Fev/26', 'Mar/26', 'Abr/26', 'Mai/26'],
+    datasets: [
+      { label: 'Follows', data: [32, 175, 263, 7], backgroundColor: 'rgba(14,166,110,0.8)', borderRadius: 5 },
+      { label: 'Unfollows', data: [-7, -57, -27, -27], backgroundColor: 'rgba(224,53,53,0.75)', borderRadius: 5 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: TC, font: { size: 11 } }, grid: { display: false } },
+      y: { ticks: { color: TC, font: { size: 10 }, callback: v => v > 0 ? '+' + v : v }, grid: { color: GC } }
+    }
+  }
+});
+
+// Média diária por fase
+new Chart(document.getElementById('cRetFase'), {
+  type: 'bar',
+  data: {
+    labels: ['Fase 1\nfev/mar', 'Fase 2\nabr 1ª quin.', 'Fase 3\nabr 2ª/mai'],
+    datasets: [{
+      data: [-0.8, 34.8, -0.5],
+      backgroundColor: [-0.8, 34.8, -0.5].map(v => v > 0 ? 'rgba(14,166,110,0.85)' : 'rgba(224,53,53,0.75)'),
+      borderRadius: 8,
+      barThickness: 60
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => (ctx.parsed.y > 0 ? '+' : '') + ctx.parsed.y.toFixed(1) + '/dia' } } },
+    scales: {
+      x: { ticks: { color: TC, font: { size: 11 } }, grid: { display: false } },
+      y: { ticks: { color: TC, font: { size: 10 }, callback: v => (v > 0 ? '+' : '') + v }, grid: { color: GC }, suggestedMin: -5, suggestedMax: 40 }
+    }
+  }
+});
+
+// Saldo acumulado
+const acum = [];
+let soma = 0;
+raw.forEach(r => { soma += r.v; acum.push(parseFloat(soma.toFixed(0))); });
+new Chart(document.getElementById('cRetAcum'), {
+  type: 'line',
+  data: {
+    labels: raw.map(r => r.d),
+    datasets: [
+      {
+        data: acum,
+        borderColor: '#2563eb', borderWidth: 2.5,
+        backgroundColor: 'rgba(37,99,235,0.08)',
+        fill: true, tension: 0.35,
+        pointRadius: acum.map((v, i) => (raw[i].v >= 40 || raw[i].v <= -8) ? 5 : 0),
+        pointBackgroundColor: acum.map((v, i) => raw[i].v < 0 ? '#e03535' : '#2563eb')
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: {
+      x: { ...baseX },
+      y: { ticks: { color: TC, font: { size: 10 }, callback: v => v > 0 ? '+' + v : v }, grid: { color: GC } }
     }
   }
 });
